@@ -1,0 +1,20 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "TechPrimeLab Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "author": "Omkar Pawar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongodb": "^5.3.0",
+    "mongoose": "^7.1.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22"
+  }
+}
