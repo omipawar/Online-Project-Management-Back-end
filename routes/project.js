@@ -43,7 +43,15 @@ router.get("/getprojects", async (req, res) => {
 
         if (search) {
 
-            querry = { projectName: { $regex: search, '$options': 'i' } }
+            querry = {
+                // projectName: { $regex: search, '$options': 'i' } 
+                $or: [
+                    { "projectName": { $regex: search, '$options': 'i' } },
+                    { "reason": { $regex: search, '$options': 'i' } },
+                    { "type": { $regex: search, '$options': 'i' } },
+                    { "division": { $regex: search, '$options': 'i' } }
+                ]
+            }
             totalProjects = await Project.find(querry).count();
 
         } else if (pageNo && itemsPerPage && !search) {
